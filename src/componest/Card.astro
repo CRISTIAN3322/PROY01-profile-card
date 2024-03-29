@@ -1,0 +1,113 @@
+---
+const {name , city, text} = Astro.props
+import LinkedIn from '../../public/LinkedIn.astro'
+import Facebook from '../../public/Facebook.astro'
+import X from '../../public/X.astro'
+
+---
+
+<section class="card">
+    <header class="card-header">
+        <div class="card-content-img">
+            <img src="../../public/perfil-1.PNG" alt="foto perfil" class="card-img">
+        </div>
+        <div class="card-content">
+            <h2 class="card-h2">{name}</h2>
+            <h3 class="card-h3">{city}</h3>
+            <p class="card-p">{text}</p>
+        </div>
+    </header>
+    <footer class="card-footer">
+        <a href="#" class="card-footer-X"><X /></a>
+        <a href="#" class="card-footer-li"><LinkedIn /></a>
+        <a href="#" class="card-footer-fb"><Facebook /></a>          
+    </footer>
+</section>
+<style>
+    :root {
+        --card-bg-color: #242323;
+        --tag-color: #1e1d1d;
+        --footer-bg-color: #1f1e1e;
+        --text-color: #c2c2c2;
+        --fb-bg-color: #456da4;
+        --ig-bg-color: #ffffff;
+        --li-bg-color: #0984c6;
+    }
+
+    .card {
+        height: 430px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        color: var(--card-bg-color);
+        color: var(--text-color);
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 5px var(--card-bg-color);
+    }
+
+    .card-header {
+        align-items: center;
+        padding: 50px 50px 30px;
+        flex: 1;
+    }
+
+    .card-content-img {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .card-img {
+        height: 117px;
+        width: 117px;
+        border-radius: 100%;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-h2 {
+        font-size: 1rem;
+        margin-bottom: 5px
+    }
+
+    .card-h3 {
+        display: block;
+        padding: 1px 5px;
+        background: var(--tag-color);
+        font-weight: 200;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        /* text-align: center; */
+        margin-bottom: 20px;
+    }
+
+    .card-p {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .card-footer {
+        background: var(--footer-bg-color);
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card-footer-X {
+        color: var(--ig-bg-color);
+    }
+
+    .card-footer-li {
+        color: var(--li-bg-color);
+    }
+
+    .card-footer-fb {
+        color: var(--fb-bg-color);
+    }
+</style>
